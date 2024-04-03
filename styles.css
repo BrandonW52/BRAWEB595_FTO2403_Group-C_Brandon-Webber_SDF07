@@ -113,7 +113,7 @@ li > span {
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 100px;
+  row-gap: 16px;
   column-gap: 16px;
 }
 
@@ -126,25 +126,12 @@ li > span {
   }
 }
 
-.gallery-item:hover {
-  content: "";
-  display: block;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 0.7;
-}
-
 /* Initially hide the text */
 .visually-hidden,
-li {
+.gallery-item-likes,
+.gallery-item-comments {
   visibility: hidden;
   opacity: 0;
-}
-
-/* Show the text on hover */
-.gallery-item-info:hover li {
-  visibility: visible;
-  opacity: 1;
-  color: white;
 }
 
 .gallery-item-info {
@@ -153,45 +140,78 @@ li {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  padding: 10px 20px;
+  padding: 0;
   font-size: 20px;
   text-align: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+/* Show the text on hover */
+.gallery-item-info:hover {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* opacity: 0.7; */
+
+  ul > li {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .fa-play {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.gallery-item-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gallery-item-info > ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: flex;
   list-style: none;
-  height: max-content;
 }
 
-/* Shows if gallery */
+/* Shows gallery item */
+.gallery-item-type {
+  height: 0;
+}
+
 .fa-clone::before {
   position: absolute;
   top: 0;
   right: 0;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 24px;
+  padding: 10px 10px;
+  font-size: 20px;
   text-align: center;
+  text-shadow: 0px 0px #000;
 }
 
-.fa-video {
+.fa-play::before {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  padding: 10px 20px;
-  font-size: 24px;
+  font-size: 32px;
   text-align: center;
-}
-
-.gallery-item-type {
-  height: 0;
+  text-shadow: 0px 0px #000;
 }
 
 /* Loading Icon wonder how */
 .loader {
+  margin: 16px;
   margin-left: auto;
   margin-right: auto;
   width: 50px;
