@@ -1,23 +1,127 @@
 /* Base Styles */
 
 :root {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #262626;
+  padding-bottom: 3rem;
 }
 
 img {
-    display: block;
+  display: block;
+}
+
+.content-container {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Profile Section */
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.profile-image > img {
+  border: 12px solid rgb(18, 107, 95);
+  border-radius: 50%;
+  height: 250px;
+  width: auto;
+}
+
+/* Profile UserName && Setting */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profile-user-settings {
+  display: flex;
+  align-items: flex-end;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 100;
+  margin: 0 16px 0 0;
+}
+
+.profile-edit-btn {
+  display: flex;
+  align-items: center;
+  height: 10px;
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 1em 2em;
+  background: none;
+  margin-right: 8px;
+}
+
+.profile-settings-btn {
+  border: none;
+  background: none;
+  font-size: 24px;
+}
+
+/* Profile Stats */
+
+.profile-stats > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  font-size: 12px;
+  gap: 16px;
+}
+
+li > span {
+  font-weight: bold;
+}
+
+.profile-bio {
+  font-size: 15px;
+}
+
+.profile-real-name {
+  font-weight: bold;
+}
+
+/* Images */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 100px;
+}
+
+.gallery-image {
+  width: 300px;
+  height: 500px;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-image:hover {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
 }
