@@ -269,4 +269,9 @@ li > span {
     row-gap: 4px;
     column-gap: 4px;
   }
+  .gallery-item {
+    > img {
+      height: 250px;
+    }
+  }
 }
