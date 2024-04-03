@@ -153,7 +153,6 @@ li > span {
   content: "";
   display: block;
   background-color: rgba(0, 0, 0, 0.8);
-  /* opacity: 0.7; */
 
   ul > li {
     visibility: visible;
@@ -229,5 +228,45 @@ li > span {
 @keyframes l3 {
   to {
     transform: rotate(1turn);
+  }
+}
+
+/* Mobile sizing */
+@media only screen and (max-width: 600px) {
+  .content-container {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-image > img {
+    border: 6px solid rgb(18, 107, 95);
+    border-radius: 50%;
+    height: 150px;
+    width: auto;
+  }
+  .profile {
+    gap: 4px;
+  }
+  .profile-content {
+    gap: 8px;
+  }
+  h1 {
+    font-size: 16px;
+  }
+  .profile-edit-btn {
+    height: 10px;
+    padding: 1rem 2rem;
+  }
+
+  .profile-settings-btn {
+    font-size: 16px;
+  }
+  .profile-bio {
+    font-size: 12px;
+  }
+  .gallery {
+    row-gap: 4px;
+    column-gap: 4px;
   }
 }
